@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/Rickyfeng7/liri-node-app#readme",
   "dependencies": {
-    "package.json": "^2.0.1"
-  }
+    "dotenv": "^5.0.0",
+    "node-spotify-api": "^1.0.7",
+    "package.json": "^2.0.1",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {}
 }
