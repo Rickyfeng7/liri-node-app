@@ -14,6 +14,9 @@ var userInput = process.argv;
 	else if(userInput[2] === "spotify-this-song"){
 		incomingSongs();
 	}
+	else if(userInput[2] === "movie-this"){
+		incommingMovies();
+	}
 	else{
 		console.log("what are you talking about ?")
 	}
@@ -52,7 +55,7 @@ function incomingTweets(){
 	    	console.log(tweets[i].created_at);
 	    	console.log(tweets[i].text);
 	    	console.log("==========================");
-	    }
+	   		}
 	  	}
 	  	else{
 		  	console.log("\n=============================");
@@ -103,4 +106,46 @@ function incomingSongs(){
 		});
 }
 
-function 
+function incommingMovies(){
+	var request = require("request");
+	var movie = "";
+
+	if(userInput[3] === "" || userInput[3] === undefined){
+		console.log("\nLearn to request a movie")
+		movie = "wanted";
+	}
+	else{
+		for(i=3; i<userInput.length; i++){
+			if(i===userInput.length-1){
+				movie = movie + userInput[i];
+			}
+			else{
+				movie = movie + userInput[i] + " "
+			}
+		}
+
+	}
+	request("http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
+		if (!error && response.statusCode === 200) {
+		console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
+		console.log("\n=========================================")
+		// * Title of the movie.
+		console.log("The movie's title is: " + JSON.parse(body).Title);
+		// * Year the movie came out.
+		console.log("The Year the movie came out: " + JSON.parse(body).Released)
+		// * IMDB Rating of the movie.
+		console.log("The IMDB Rating is: " + JSON.parse(body).imdbRating)
+	   // * Rotten Tomatoes Rating of the movie.
+	   console.log("The Rotten tomatoes Ratings: " + JSON.parse(body).Ratings[1].Value)
+	   // * Country where the movie was produced.
+	   console.log("The Country the movie was produced: " + JSON.parse(body).Country)
+   		// * Language of the movie.
+   		console.log("Language: " + JSON.parse(body).Language)
+   		// * Plot of the movie.
+   		console.log("Plot: " + JSON.parse(body).Plot)
+	   // * Actors in the movie.
+	   console.log("Actors: " + JSON.parse(body).Actors)
+		console.log("=========================================")
+		  }
+		});
+}
