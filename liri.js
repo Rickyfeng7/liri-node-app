@@ -19,11 +19,13 @@ var userInput = process.argv;
 	}
 	else{
 		console.log("what are you talking about ?")
+		console.log("Here are my commands my-tweets, spotify-this-song, movie-this")
 	}
 
 // console.log(keys)
 
-// Twitter calling for a response
+// Calling Twitter for a response
+
 function incomingTweets(){
 
 	var client = new Twitter(keys.twitter);
@@ -65,6 +67,7 @@ function incomingTweets(){
 	});
 }
 
+// Calling Spotify for a request
 function incomingSongs(){
 
 	var spotify = new Spotify(keys.spotify);
@@ -80,38 +83,40 @@ function incomingSongs(){
 				music = music + userInput[i];
 			}
 			else{
-				music = music + userInput[i] + " "
+				music = music + userInput[i] + " ";
 			}
 		}
 
 	}
-		spotify
-		.search({ type: 'track', query: music })
+
+	spotify.search({ type: 'track', query: music })
 		.then(function(response) {
-		console.log("\n============================================")
-		//artist name
-		console.log("Artist: " + response.tracks.items[0].album.artists[0].name);
-		console.log("============================================")
-		// The Songs Name
-		console.log("Song name: " + response.tracks.items[0].name);
-		console.log("============================================")
-		// A preview link of the song from Spotify
-		console.log("Spotify Link: " + response.tracks.items[0].external_urls.spotify)
-		console.log("===========================================")
-		// The album that the song is from
-		console.log("Album: " + response.tracks.items[0].album.name)
+			for(var i = 0; i < 20; i++){
+			console.log("\n============================================")
+			//artist name
+			console.log("Artist: " + response.tracks.items[i].album.artists[0].name);
+			// The Songs Name
+			console.log("Song name: " + response.tracks.items[i].name);
+			// A preview link of the song from Spotify
+			console.log("Spotify Link: " + response.tracks.items[i].preview_url)
+			// The album that the song is from
+			console.log("Album: " + response.tracks.items[i].album.name)
+			console.log("===========================================")
+			}
 		})
 		.catch(function(err) {
 		console.log(err);
-		});
+	});
+	
 }
 
+//Calling OMDB for movie information
 function incommingMovies(){
 	var request = require("request");
 	var movie = "";
 
 	if(userInput[3] === "" || userInput[3] === undefined){
-		console.log("\nLearn to request a movie")
+		console.log("\nwhat kind of movie request is that")
 		movie = "wanted";
 	}
 	else{
