@@ -142,7 +142,7 @@ function incomingSongs(){
 
 	spotify.search({ type: 'track', query: music })
 		.then(function(response) {
-			// for(var i = 0; i < 20; i++){
+			for(var i = 0; i < 20; i++){
 			console.log("\n============================================")
 			//artist name
 			console.log("Artist: " + response.tracks.items[0].album.artists[0].name);
@@ -153,7 +153,7 @@ function incomingSongs(){
 			// The album that the song is from
 			console.log("Album: " + response.tracks.items[0].album.name)
 			console.log("===========================================")
-			// }
+			}
 		})
 		.catch(function(err) {
 		console.log(err);
@@ -213,11 +213,11 @@ function listening(){
 		return console.log(error);
 		}
 		// console.log(data);
-			var dataArr = data.split(",");
-			console.log(dataArr);
-			if(dataArr[0] === "spotify-this-song"){
-				userInput[2] = dataArr[0]
-				userInput[3] = dataArr[1]
+		var dataArr = data.split(",");
+		console.log(dataArr);
+		if(dataArr[0] === "spotify-this-song"){
+			userInput[2] = dataArr[0]
+			userInput[3] = dataArr[1]
 			incomingSongs();
 		}
 	});
