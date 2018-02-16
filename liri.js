@@ -8,6 +8,7 @@ var keys = require('./keys.js');
 //anything the user types
 
 console.log("========================================================================================================================")
+console.log("                                                     ollccc::cccllo                                                     ")
 console.log("                                                XKOkdollccc::cccllobkOKN                                                ")
 console.log("                                          N0xoc:;,''''..'',;,,''';;;;,,;:cokKN                                          ")
 console.log("                                      XOdc,''',;;;;;,'...,dkxl'',;lxO0Okxl:,,;cd0N                                      ")
@@ -28,12 +29,12 @@ console.log("                 Nl.:0XO,      .ll;:lllol:.;;.':;.       .;:,;.    
 console.log("                 O'.oKXo.     .od.,doclol:..c'.::'.       ,;,,.        ;do'                    'O O. o                  ")
 console.log("                 d.'xXK:     'lkc.:oc:lolc,.,:.,:.',.     ,;',.       .cl,                     .dN0; ;X                 ")
 console.log("                Nc ,kKKOoll:clcd,'ccc:loooc..c'.:, ,:'.   ',''.       .cc.                .....'dXK: '0                 ")
-console.log("                X: ,xxx0KXXX0;:l.::;::looll;.,c.':..:'.,'.',''........,:;'.',;;;:ccllllooddxkO0KKK0c .k                 ")
-console.log("                 ; ,ddddd0KKd,l;,l,,:;cllc;:'.c;.:; ;;.,:..','........,::'',;:cclodxxkOO00KKXXNNNKO: .k                 ")
+console.log("                X: ,xxx0KXXX0;:l.::;::looll;.,c.':..:'.,'.',''........,:;'.',;;;:ccllllooddxkO0KKK0c .O                 ")
+console.log("                K; ,ddddd0KKd,l;,l,,:;cllc;:'.c;.:; ;;.,:..','........,::'',;:cclodxxkOO00KKXXNNNKO: .H                 ")
 console.log("                X: .dkxodOod:,o':c.,;,:ooc.,:.'l..c..:'.:' ':;'.      .:c.         ......'',;;;l0N0; .O                 ")
 console.log("                Nc .ckOKKd:l,:c'o;.::;:olc'.c,.::.;:.,:.,c..:c;.,'.    ;l'                     ,ONO. ,0                 ")
 console.log("                 d. ,xO0k;cc,l,;o.,:;::ool:.,l..l'.c'.:,.:, .;:.'c;''..'c;.                   .lKNo. :X                 ")
-console.log("                 O' .lOKx,l;;l.lc.:c:ccloll,.l: ;c.,c.'c.'c. .c,.:;.,c;,;:,                   :ON0, .d                  ")
+console.log("                 O' .lOKx,l;;l.lc.:c:ccloll,.l: ;c.,c.'c.'c. .c,.:;.,c;,;:,                   :ON0, .D                  ")
 console.log("                 Nc  'xKxol'l:'o,'ol:::lcc::.,l..l,.c,.:;.:;. ,c.,c..l,.;:;'..               'xXXl. ,K                  ")
 console.log("                  O'  :OK0;,l':l.:o:,:clc:';;.:c.,c.'c..c..cl'.c;.c; :: 'l,.;;,'...         .oKXx. .d                   ")
 console.log("                  No. .cO0ol:.o;'l:;,;clc:'.:'.l'.c;.:; ;:.;x:.'c.'l..l'.c;.;c';loool:,..  .ckKO,  cX                   ")
@@ -51,6 +52,7 @@ console.log("                                   N0o;.     .....'''',,,,''',,,,,,
 console.log("                                       Kko;..      ..................     ..:okK                                        ")
 console.log("                                           X0xoc;'...              ..';cox0X                                            ")
 console.log("                                                 NX00OxxdddoobbbxxOKXN                                                  ")
+console.log("                                                        dddoobbb                                                        ")
 console.log("========================================================================================================================")
 
 var userInput = process.argv;
@@ -69,7 +71,7 @@ var userInput = process.argv;
 	}
 	else{
 		console.log("what are you talking about ?")
-		console.log("Here are my commands my-tweets, spotify-this-song, movie-this, Do-What-I-Say")
+		console.log("Here are my Commands"+ "\n" + "For Twitter: my-tweets" + "\n" + "For Spotify: spotify-this-song" + "\n" +  "For OMDB: movie-this" + "\n" + "Do-What-I-Say")
 	}
 
 // Calling Twitter for a response
@@ -81,7 +83,7 @@ function incomingTweets(){
 	var queryInput = "";
 	// if the user puts in a black or becomes undefine it'll send them to stephen curry's tweets
 	if(userInput[3] === "" || userInput[3] === undefined){
-		console.log("\nLearn to Tweet")
+		console.log("\nLearn to Tweet, here is some sharper tweets")
 		queryInput = "StephenCurry30"
 	}
 	else if(userInput.length-3>1){
